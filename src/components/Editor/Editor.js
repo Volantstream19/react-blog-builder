@@ -2,19 +2,19 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor() {
+export default function Editor({ setTitle, setSubTitle, font, setFont, setAlign, setText }) {
   return (
     <div className="editor">
       <div className="form-control">
-        <input name="title" type="text" />
+        <input name="title" type="text" onChange={(e) => setTitle(e.target.value)} />
         <label htmlFor="title">Title</label>
       </div>
       <div className="form-control">
-        <input type="text" />
+        <input type="text" name="subtitle" onChange={(e) => setSubTitle(e.target.value)} />
         <label>Subtitle</label>
       </div>
       <div className="form-control">
-        <select>
+        <select value={font} onChange={(e) => setFont(e.target.value)}>
           <option value="architect">{"Architect's Daughter"}</option>
           <option value="comforter">Comforter</option>
           <option value="fredoka">Fredoka</option>
@@ -30,22 +30,37 @@ export default function Editor() {
         <label>Alignment</label>
         <div className="radio-group">
           <label>
-            <input name="align" type="radio" value="left" />
+            <input
+              name="align"
+              type="radio"
+              value="left"
+              onChange={(e) => setAlign(e.target.value)}
+            />
             <i className="ri-align-left"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="center" />
+            <input
+              name="align"
+              type="radio"
+              value="center"
+              onChange={(e) => setAlign(e.target.value)}
+            />
             <i className="ri-align-center"></i>
           </label>
           <label>
-            <input name="align" type="radio" value="right" />
+            <input
+              name="align"
+              type="radio"
+              value="right"
+              onChange={(e) => setAlign(e.target.value)}
+            />
             <i className="ri-align-right"></i>
           </label>
         </div>
       </div>
-      <div className="form-control">
+      <div className="form-control" type="text" onChange={(e) => setText(e.target.value)}>
         <textarea style={{ height: '250px' }} />
-        <label>Text</label>
+        <label>Text Netlify Fix</label>
       </div>
     </div>
   );
