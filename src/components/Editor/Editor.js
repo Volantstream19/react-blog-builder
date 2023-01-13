@@ -60,7 +60,7 @@ export default function Editor({ setTitle, setSubTitle, font, setFont, setAlign,
       </div>
       <div className="form-control" type="text" onChange={(e) => setText(e.target.value)}>
         <textarea style={{ height: '250px' }} />
-        <label>Text</label>
+        <label>Text Netlify Fix</label>
       </div>
     </div>
   );
